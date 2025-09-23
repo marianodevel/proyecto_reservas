@@ -1,0 +1,25 @@
+{
+  "name": "proyecto-reservas",
+  "version": "1.0.0",
+  "description": "- **.env.example**: Variables de entorno de ejemplo.   - **.gitignore**: Archivos a excluir de git.   - **package.json**: Dependencias y scripts de Node.js.   - **Dockerfile**: Imagen de la aplicación.   - **docker-compose.yml**: Orquestación de servicios.   - **README.md**: Documentación del proyecto.   - **eslint.config.js**: Configuración de ESLint.   - **prettier.config.js**: Configuración de Prettier.",
+  "main": "eslint.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "dev": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marianodevel/proyecto_reservas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/marianodevel/proyecto_reservas/issues"
+  },
+  "homepage": "https://github.com/marianodevel/proyecto_reservas#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
