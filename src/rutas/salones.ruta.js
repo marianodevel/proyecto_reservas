@@ -1,8 +1,20 @@
 const express = require("express");
 const router = express.Router();
+const controlador = require("../controladores/salones.controlador");
 
-router.get("/", (req, res) => {
-  res.json({ mensaje: "Ruta de salones OK" });
-});
+// Browse
+router.get("/", controlador.listar);
+
+// Read
+router.get("/:id", controlador.obtener);
+
+// Add
+router.post("/", controlador.crear);
+
+// Edit
+router.put("/:id", controlador.actualizar);
+
+// Delete
+router.delete("/:id", controlador.eliminar);
 
 module.exports = router;
