@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  title: API Sistema de Reservas
+  version: 1.0.0
+  description: Documentación de la API para gestión de reservas, salones, usuarios, servicios, turnos y reservas.
+servers:
+  - url: http://localhost:3000
+paths:
+  /salones:
+    get:
+      summary: Listar todos los salones
+      responses:
+        '200':
+          description: Lista de salones
+    post:
+      summary: Crear un salón
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                titulo:
+                  type: string
+                direccion:
+                  type: string
+                latitud:
+                  type: string
+                longitud:
+                  type: string
+                capacidad:
+                  type: integer
+                importe:
+                  type: number
+                activo:
+                  type: boolean
+      responses:
+        '201':
+          description: Salón creado
+  /salones/{id}:
+    get:
+      summary: Obtener un salón por ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Detalle del salón
+        '404':
+          description: Salón no encontrado
+    put:
+      summary: Actualizar un salón
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Salón actualizado
+    delete:
+      summary: Eliminar un salón
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: Salón eliminado
+
