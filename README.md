@@ -10,6 +10,18 @@
 - **eslint.config.js**: Configuración de ESLint.  
 - **prettier.config.js**: Configuración de Prettier.  
 
+## Ejecución
+
+1.  Instalar las dependencias:
+    ```bash
+    npm install
+    ```
+2.  Configurar las variables de entorno (crear un archivo `.env` basado en `.env.example`).
+3.  Ejecutar la aplicación en modo desarrollo:
+    ```bash
+    npm run dev
+    ```
+
 ## src/
 - **index.js**: Punto de entrada.  
 - **app.js**: Configuración principal de Express.  
@@ -45,7 +57,7 @@ Funciones auxiliares.
 ## sql/
 - **migraciones/**: Migraciones de BD.  
 - **seeders/**: Datos iniciales.  
-- **procedimientos_almacenados.sql**: Procedimientos en SQL.  
+- **procedimientos_almadenados.sql**: Procedimientos en SQL.  
 
 ## scripts/
 - **iniciar_bd.sql**: Script inicial.  
@@ -53,5 +65,4 @@ Funciones auxiliares.
 
 ## pruebas/
 - **unitarias/**: Pruebas unitarias.  
-- **integracion/**: Pruebas de integración.  
-
+- **integracion/**: Pruebas de integración.
