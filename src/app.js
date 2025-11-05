@@ -7,13 +7,19 @@ const usuariosRuta = require("./rutas/usuarios.ruta");
 const reservasServiciosRuta = require("./rutas/reservas_servicios.ruta");
 const authRuta = require("./rutas/auth.ruta");
 
+// Importamos el nuevo middleware
+const authMiddleware = require("./middlewares/auth.middleware");
+
 const app = express();
 app.use(express.json());
 
-// Rutas Públicas
+// Rutas Públicas (no requieren token)
 app.use("/auth", authRuta);
 
-// Rutas (próximamente protegidas)
+// Todas las rutas definidas DEBAJO de esta línea requerirán un token válido
+app.use(authMiddleware);
+
+// Rutas Protegidas
 app.use("/salones", salonesRuta);
 app.use("/servicios", serviciosRuta);
 app.use("/turnos", turnosRuta);
