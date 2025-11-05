@@ -4,21 +4,21 @@ const serviciosRuta = require("./rutas/servicios.ruta");
 const turnosRuta = require("./rutas/turnos.ruta");
 const reservasRuta = require("./rutas/reservas.ruta");
 const usuariosRuta = require("./rutas/usuarios.ruta");
-const swaggerUi = require("swagger-ui-express");
-const YAML = require("yamljs");
-const swaggerDocument = YAML.load("./src/docs/swagger.yaml");
+const reservasServiciosRuta = require("./rutas/reservas_servicios.ruta");
+const authRuta = require("./rutas/auth.ruta");
 
 const app = express();
 app.use(express.json());
 
-// Rutas
+// Rutas Públicas
+app.use("/auth", authRuta);
+
+// Rutas (próximamente protegidas)
 app.use("/salones", salonesRuta);
 app.use("/servicios", serviciosRuta);
 app.use("/turnos", turnosRuta);
 app.use("/reservas", reservasRuta);
 app.use("/usuarios", usuariosRuta);
-
-// Documentación
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/reservas-servicios", reservasServiciosRuta);
 
 module.exports = app;

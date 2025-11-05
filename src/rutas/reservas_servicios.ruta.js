@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const controlador = require("../controladores/usuarios.controlador");
+const controlador = require("../controladores/reservas_servicios.controlador");
 
 // Browse
 router.get("/", controlador.listar);
